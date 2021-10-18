@@ -131,6 +131,26 @@ class _HomePageState extends State<HomePage> {
           subtitle: Text(
               "He'll want to use your yacht, and I don't want this thing smelling like fish"),
         ),
+        ListTile(
+          leading: Icon(
+            Icons.flutter_dash_outlined,
+            color: Colors.white,
+            size: 40,
+          ),
+          title: Text('Header'),
+          subtitle: Text(
+              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
+        ),
+        ListTile(
+          leading: Icon(
+            Icons.flutter_dash_outlined,
+            color: Colors.white,
+            size: 40,
+          ),
+          title: Text('Header'),
+          subtitle: Text(
+              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
+        ),
       ],
     );
   }
