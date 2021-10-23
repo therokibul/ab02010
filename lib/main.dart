@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.teal,
+        // backgroundColor: Colors.teal,
         body: HomePage(),
       ),
     );
@@ -30,128 +30,62 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        SizedBox(
-          height: 20,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return SafeArea(
+      child: Center(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Settings',
-              style: TextStyle(color: Colors.white),
+              'Log in',
+              style: TextStyle(fontSize: 40),
             ),
-            Text(
-              'Profile',
-              style: TextStyle(fontSize: 30, color: Colors.white),
+            SizedBox(
+              height: 200,
             ),
-            Text(
-              'Log out',
-              style: TextStyle(color: Colors.white),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  labelText: 'Email',
+                ),
+              ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  labelText: 'Password',
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            MaterialButton(
+              onPressed: () {},
+              child: Text(
+                'Login',
+                style: TextStyle(color: Colors.white),
+              ),
+              minWidth: 300,
+              color: Colors.green,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                'Forget Your Password',
+                style: TextStyle(color: Colors.green),
+              ),
+            )
           ],
         ),
-        SizedBox(
-          height: 20,
-        ),
-        CircleAvatar(
-          radius: 70,
-          backgroundImage: AssetImage('images/lash.jpg'),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Text(
-          'Victoria Robertson',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 30),
-        ),
-        Text(
-          'A mantra goes here',
-          textAlign: TextAlign.center,
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-        ListTile(
-          leading: Icon(
-            Icons.flutter_dash_outlined,
-            color: Colors.white,
-            size: 40,
-          ),
-          title: Text('Header'),
-          subtitle: Text(
-              "He'll want to use your yacht, and I don't want this thing smelling like fish"),
-        ),
-      ],
+      ),
     );
   }
 }
