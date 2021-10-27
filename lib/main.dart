@@ -27,6 +27,9 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
+String name = '';
+bool show = true;
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -39,23 +42,44 @@ class _HomePageState extends State<HomePage> {
               'Log in',
               style: TextStyle(fontSize: 40),
             ),
-            SizedBox(
+            Image(
+              image: AssetImage('images/lash.jpg'),
               height: 200,
+            ),
+            Text(
+              'Welcome $name',
+              style: TextStyle(fontSize: 40),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
                 decoration: InputDecoration(
-                  hintText: 'Email',
-                  labelText: 'Email',
+                  hintText: 'Name',
+                  labelText: 'Enter your Name',
                 ),
+                onChanged: (value) {
+                  setState(() {
+                    name = value;
+                  });
+                },
               ),
             ),
             Padding(
               padding: const EdgeInsets.all(10.0),
               child: TextField(
-                obscureText: true,
+                obscureText: show,
                 decoration: InputDecoration(
+                  suffix: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        show = !show;
+                      });
+                    },
+                    child: Text(
+                      'Show',
+                      style: TextStyle(color: Colors.green),
+                    ),
+                  ),
                   hintText: 'Password',
                   labelText: 'Password',
                 ),
