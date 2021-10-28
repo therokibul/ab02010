@@ -56,6 +56,9 @@ class _HomePageState extends State<HomePage> {
                 decoration: InputDecoration(
                   hintText: 'Name',
                   labelText: 'Enter your Name',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
                 onChanged: (value) {
                   setState(() {
