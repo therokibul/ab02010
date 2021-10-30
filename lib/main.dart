@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'home.dart';
+import 'signup.dart';
 
 void main() {
   runApp(
@@ -12,107 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        // backgroundColor: Colors.teal,
-        body: HomePage(),
-      ),
+      initialRoute: "/",
+      routes: {
+        "/":(context) => HomePage(),
+        MyRoute.homeRoute: (context) => HomePage(),
+        MyRoute.signRoute: (context) => SignUp(),
+      },
+      
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-String name = '';
-bool show = true;
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
-        child: Column(
-          // mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Log in',
-              style: TextStyle(fontSize: 40),
-            ),
-            Image(
-              image: AssetImage('images/lash.jpg'),
-              height: 200,
-            ),
-            Text(
-              'Welcome $name',
-              style: TextStyle(fontSize: 40),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Name',
-                  labelText: 'Enter your Name',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                ),
-                onChanged: (value) {
-                  setState(() {
-                    name = value;
-                  });
-                },
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: TextField(
-                obscureText: show,
-                decoration: InputDecoration(
-                  suffix: TextButton(
-                    onPressed: () {
-                      setState(() {
-                        show = !show;
-                      });
-                    },
-                    child: Text(
-                      'Show',
-                      style: TextStyle(color: Colors.green),
-                    ),
-                  ),
-                  hintText: 'Password',
-                  labelText: 'Password',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 100,
-            ),
-            MaterialButton(
-              onPressed: () {},
-              child: Text(
-                'Login',
-                style: TextStyle(color: Colors.white),
-              ),
-              minWidth: 300,
-              color: Colors.green,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
-              ),
-            ),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Forget Your Password',
-                style: TextStyle(color: Colors.green),
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
+class MyRoute{
+  static String homeRoute = '/home';
+  static String signRoute = '/sign';
 }
