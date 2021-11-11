@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
-import 'signup.dart';
+
+import 'splash_screen.dart';
 
 void main() {
-  runApp(
-    MyApp(),
-  );
+  runApp(MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -15,18 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "/",
-      routes: {
-        "/":(context) => HomePage(),
-        MyRoute.homeRoute: (context) => HomePage(),
-        MyRoute.signRoute: (context) => SignUp(),
-      },
-      
+      home: Scaffold(
+        body: SplashScreen(),
+      ),
     );
   }
-}
-
-class MyRoute{
-  static String homeRoute = '/home';
-  static String signRoute = '/sign';
 }
