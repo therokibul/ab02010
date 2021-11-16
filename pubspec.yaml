@@ -78,11 +78,7 @@ flutter:
     - family: Kings
       fonts:
         - asset: assets/fonts/Kings-Regular.ttf
-        
-  fonts:
-    - family: 
-      fonts:
-        - assets: 
+
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
