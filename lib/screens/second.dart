@@ -8,7 +8,7 @@ class Second extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        color: Colors.green,
+        color: Colors.red,
       ),
     );
   }
